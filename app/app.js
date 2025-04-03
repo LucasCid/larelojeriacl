@@ -196,6 +196,25 @@ function actualizarTotalCarrito(){
 
 }
 
+//Filtrar barra de busqueda
+
+document.addEventListener("DOMContentLoaded", () =>{
+    const buscador = document.getElementById("buscador")
+    const items = document.querySelectorAll(".item")
+
+    buscador.addEventListener("input", () =>{
+        const texto = buscador.value.toLowerCase()
+
+        items.forEach(item =>{
+            const titulo = item.querySelector(".titulo-item").textContent.toLowerCase()
+
+            if(titulo.includes(texto)){
+                item.style.display = "block"
+            } else{
+                item.style.display = "none"
+            }
+    })})
+})
 
 
 
